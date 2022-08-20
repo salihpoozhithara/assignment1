@@ -1,0 +1,39 @@
+<form action="" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+
+        <div class="  w-50 div1 col-lg-6 col-md-12 ">
+            <img src="" alt="">
+        </div>
+        <div class="container-fluid  w-25 col-lg-6 col-12 mt-5 text-center">
+            <h3 class="head1">Login to Budget</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <input type="text" class=" mail font-control rounded form-control" placeholder="Email" required formControlName="email" [ngClass]="{'is-invalid':submit && f.email.errors}"> <br>
+            <div *ngIf="submit && f.email.errors " class="invalid-feedback">
+                <div *ngIf="f.email.errors">email is required</div>
+                <div *ngIf="f.email.errors"></div>
+            </div>
+
+            <input type="password" class="pswd rounded form-control" placeholder="password" required formControlName="pswd"><br>
+            <div *ngIf="(this.loginForm.get('pswd') ?.touched||this.loginForm.get('pswd') ?.dirty)&&this.loginForm.get('pswd') ?.errors" style="color: red;">
+                Invalid Password 
+            </div>
+            <div class="row">
+                <div class="col-6"> <input type="checkbox" name="" id=""> <label for=""> Keep me logged in </label>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-5"> <a class="me-auto" href="">Forgot password ?</a>
+                </div>
+            </div>
+            <br><br>
+         
+                <button class="button btn btn-primary form-control p-2">Login</button>
+
+                <br><br>
+
+                <a href="">Create new Account ?</a>
+             
+
+        </div>
+
+    </div>
+</form>
